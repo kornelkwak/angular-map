@@ -1,0 +1,17 @@
+<div class="layer-panel" [ngClass]="{'active': layerPanelActive}">
+    <h3>Select Base Layer</h3>
+    <div *ngFor="let layer of baseLayersControl">
+      <label>
+        <input type="radio" [value]="layer.name" [(ngModel)]="selectedBaseLayer" (change)="onBaseLayerChange(layer.name)" />
+        {{ layer.name }}
+      </label>
+    </div>
+  <h3>Select Layers</h3>
+  <div *ngFor="let overlay of overlays">
+    <label>
+      <input type="checkbox" [ngModel]="selectedLayers.includes(overlay.name)"
+             (ngModelChange)="onLayerChange($event, overlay.name)" />
+      {{ overlay.name }}
+    </label>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ukryj przewijanie na poziomie strony */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 48px);
+  overflow: hidden;
+}
+
+.map-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  height: 100%
+}
+
+.layer-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 99999;
+}
+
+.layer-panel {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 99998;
+}
+
+.layer-panel.active {
+  right: 0;
+}
