@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgModule } from '@angular/core';
 import proj4 from 'proj4';
 
 const coordinateDefs: { [key: string]: string } = {
@@ -20,7 +21,7 @@ enum CoordinateFormat {
 @Component({
   selector: 'app-coordinates-widget',
   templateUrl: './coordinates-widget.component.html',
-  styleUrls: ['./coordinates-widget.component.scss']
+  styleUrls: ['./coordinates-widget.component.scss'],
 })
 export class CoordinatesWidgetComponent {
   @Input() currentCoordinates: string = '';
